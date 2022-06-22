@@ -79,7 +79,7 @@ canvas.create_image(50,50,image=img2,tags='img2')
 
 
 
-fan = ImageTk.PhotoImage(resize_image('fan-icon.png',100)) 
+fan = ImageTk.PhotoImage(Image.open('fan.png')) 
 canvas.create_image(200,200,image=fan,tags='img3')
 
 import time
@@ -92,7 +92,7 @@ def run_fan(event=None):
 	while True:	
 		if angle != 0:
 			canvas.delete('img3')
-			fan = ImageTk.PhotoImage(resize_image('fan-icon.png',100).rotate(angle)) 
+			fan = ImageTk.PhotoImage(image = Image.open('fan.png').rotate(angle)) 
 			canvas.create_image(200,200,image=fan,tags='img3')
 		angle += 20
 		if angle >= 360:
