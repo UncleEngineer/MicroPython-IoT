@@ -44,8 +44,8 @@ def check_temp():
 def post_temp():
     while True:
         try:
-            url = 'http://192.168.0.100:8000/sensor-post'
-            data = {'code': 'TM-101','name':'Temp and Humid - 1','temperature':t, 'humidity':h}
+            url = 'http://192.168.0.100:8000/api'
+            data = {'code': 'TM-101','title':'Temp1','temperature':t, 'humidity':h}
 
             #r = urequests.post(url, data=json.dumps(data))
             r = urequests.post(url, json=data)
